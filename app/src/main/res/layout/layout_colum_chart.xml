@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:padding="8dp"
+    android:text="现阶段，我国互联网教育市场增长率位居全行第三，2015年市场规划预计到2017，将突破2800亿。2013-2017年互联网教育市场规模具体如下图所示"
+    android:textColor="@android:color/darker_gray"
+    android:textSize="14sp"/>
+    <lecho.lib.hellocharts.view.ColumnChartView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ccv_main_market"
+        android:layout_margin="8dp"/>
+</LinearLayout>
