@@ -43,7 +43,6 @@ private View lineView,pieView,columView;
         initPicChart();
         initColumn();
     }
-
     private void initColumn() {
         ColumnChartView columnChartView= columView.findViewById(R.id.ccv_main_market);
         String [] year=new String[]{"2013","2014","2015","2016","2017"};
@@ -71,7 +70,6 @@ private View lineView,pieView,columView;
         columnChartData.setAxisYLeft(axisY);
         columnChartView.setColumnChartData(columnChartData);
     }
-
     private void initPicChart() {
         PieChartView pieChartView=pieView.findViewById(R.id.pcv_main_edu);
         int [] pieData={8,24,35,23,10};
@@ -93,25 +91,22 @@ private View lineView,pieView,columView;
                 String[] stateChar={"高等教育","职业教育","语言教育","K12教育","其他"};
                 pieChartData.setCenterText1(stateChar[i]);
             }
-
             @Override
             public void onValueDeselected() {
 
             }
         });
     }
-
     private void initLineChart() {
         LineChartView lineChartView=lineView.findViewById(R.id.lcv_main_temperature);
         String[] lineData={"周一","周二","周三","周四","周五","周六","周七"};
-        List<AxisValue> axisValues=new ArrayList<>();
+        List<AxisValue> axisXValues=new ArrayList<>();
         for (int i=0;i<lineData.length;i++){
-            axisValues.add(new AxisValue(i).setLabel(lineData[i]));
+            axisXValues.add(new AxisValue(i).setLabel(lineData[i]));
         }
         Axis axisX=new Axis();
-        axisX.setValues(axisValues);
+        axisX.setValues(axisXValues);
         Axis axisY=new Axis();
-
         int [] temperature={24,27,26,25,26,27,24};
         List<PointValue> pointValuesnew =new ArrayList<>();
         for (int i=0;i<temperature.length;i++){
@@ -128,7 +123,6 @@ private View lineView,pieView,columView;
         lineChartView.setLineChartData(data);
         lineChartView.setVisibility(View.VISIBLE);
     }
-
     private void initTabLayout() {
         LayoutInflater mInflater=LayoutInflater.from(this);
         lineView=mInflater.inflate(R.layout.layout_line_chart,null);
@@ -148,12 +142,7 @@ private View lineView,pieView,columView;
         mTabLayoutMainTabs.addTab(mTabLayoutMainTabs.newTab().setText(mTitleList.get(0)));
         mTabLayoutMainTabs.addTab(mTabLayoutMainTabs.newTab().setText(mTitleList.get(1)));
         mTabLayoutMainTabs.addTab(mTabLayoutMainTabs.newTab().setText(mTitleList.get(2)));
-
-
-
     }
-
-
     private void initView() {
         mTabLayoutMainTabs=(TabLayout)findViewById(R.id.tabLayout_main_tabs);
         mViewPagerMainCharts=(ViewPager)findViewById(R.id.viewPager_main_charts);
