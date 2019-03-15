@@ -142,6 +142,7 @@ private View lineView,pieView,columView;
         mTabLayoutMainTabs.addTab(mTabLayoutMainTabs.newTab().setText(mTitleList.get(0)));
         mTabLayoutMainTabs.addTab(mTabLayoutMainTabs.newTab().setText(mTitleList.get(1)));
         mTabLayoutMainTabs.addTab(mTabLayoutMainTabs.newTab().setText(mTitleList.get(2)));
+        mTabLayoutMainTabs.setupWithViewPager(mViewPagerMainCharts);
     }
     private void initView() {
         mTabLayoutMainTabs=(TabLayout)findViewById(R.id.tabLayout_main_tabs);
